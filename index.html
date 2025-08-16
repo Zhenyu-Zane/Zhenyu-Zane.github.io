@@ -60,6 +60,30 @@
       background: rgba(0,0,0,0.02);           
       box-shadow: 0 4px 12px rgba(0,0,0,.05); 
     }
+    .award-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .award-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    
+    .award-card:last-child {
+      border-bottom: none;
+    }
+    
+    .award-date {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 14px;
+      white-space: nowrap;
+    }
     .pub-title { font-weight: 600; }
     footer { margin: 48px 0 12px; color: var(--muted); font-size: 14px; text-align: center; }
     /* Education cards */
@@ -193,12 +217,24 @@
 
       <section id="awards">
         <h2>Awards</h2>
-        <ul class="list">
-          <li><em>NTU Research Scholarship</em>, 2024</li>
-          <li><em>Excellent Graduation Thesis of Beijing</em>, 2023</li>
-          <li><em>Xiaomi Special Scholarship</em>, 2022</li>
-          <li><em>First-Class Scholarship, UIBE</em>, 2022</li>
-        </ul>
+        <div class="award-list">
+          <div class="award-card">
+            <div class="award-name"><em>NTU Research Scholarship</em></div>
+            <div class="award-date">2024</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name"><em>Excellent Graduation Thesis of Beijing</em></div>
+            <div class="award-date">2023</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name"><em>Xiaomi Special Scholarship</em></div>
+            <div class="award-date">2022</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name"><em>First-Class Scholarship, UIBE</em></div>
+            <div class="award-date">2022</div>
+          </div>
+        </div>
       </section>
 
     </main>
