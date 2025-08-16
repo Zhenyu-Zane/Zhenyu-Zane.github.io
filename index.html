@@ -124,17 +124,19 @@
       width: 120%;
       height: 100%;
       pointer-events: none;
-      background: linear-gradient(110deg,
+      background: linear-gradient(
+        110deg,
         transparent 0%,
-        color-mix(in oklab, var(--accent) 20%, transparent) 30%,
-        color-mix(in oklab, var(--accent) 40%, transparent) 50%,
-        transparent 70%);
+        color-mix(in oklab, var(--accent) 15%, transparent) 30%, /* 蓝色柔和 */
+        color-mix(in oklab, var(--accent) 25%, transparent) 50%, /* 蓝色柔和 */
+        transparent 70%
+      );
       transform: skewX(-12deg);
       opacity: 0;
     }
     .award-card:hover::before,
     .award-card:focus-within::before {
-      animation: sweep 900ms ease forwards;
+      animation: sweep 1.6s ease forwards;  /* 时间由 900ms → 1600ms */
       opacity: 1;
     }
     @keyframes sweep {
