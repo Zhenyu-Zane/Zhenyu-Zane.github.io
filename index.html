@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zhenyu (Zane) Li – Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Zhenyu (Zane) Li – research in robust optimization, project management, prescriptive analytics, and causal inference." />
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --fg: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --brand: #2563eb;
+      --accent: #3b82f6;
+      --line: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#a0a6ad; --card:#12161b; --brand:#4f8cff; --accent:#7cc7ff; --line:#1f2630; }
+    }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .id { display: flex; gap: 20px; align-items: center; }
+    .avatar { width: 128px; height: 160px; border-radius: 20px; overflow: hidden; background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,.15); border: 2px solid var(--line); }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0; }
+    .title { color: var(--muted); margin-top: 6px; }
+    .meta { margin-top: 10px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { padding: 10px 18px; border-radius: 18px; background: var(--card); color: var(--fg); text-decoration: none; border: 1px solid var(--line); transition: transform .12s ease, background .2s ease, box-shadow .2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.1); border-color: var(--accent); }
+    .brand { background: linear-gradient(135deg, var(--brand), var(--accent)); color: white; border: none; }
+    section { margin-top: 42px; padding: 28px; border-radius: 20px; background: var(--card); box-shadow: 0 4px 16px rgba(0,0,0,.08); border: 1px solid var(--line); }
+    h2 { font-size: 22px; margin: 0 0 18px; }
+    p { margin: 8px 0 12px; }
+    .cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { background: var(--card); border-radius: 20px; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,.08); border: 1px solid var(--line); }
+    .pill { display:inline-block; padding:8px 14px; border-radius:999px; background: var(--bg); border:1px solid var(--line); margin: 6px 6px 0 0; font-size: 14px; color: var(--fg); box-shadow: inset 0 2px 6px rgba(0,0,0,.06); }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { padding: 12px 0; border-bottom: 1px dashed var(--line); }
+    .list li:last-child { border-bottom: 0; }
+    .pub-title { font-weight: 600; }
+    footer { margin: 48px 0 12px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="id">
+        <div class="avatar">
+          <img src="证件照白底2寸.jpg" alt="Portrait of Zhenyu (Zane) Li" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <h1>Zhenyu (Zane) Li</h1>
+          <div class="title">Master by Research Candidate, Nanyang Technological University (NTU)</div>
+          <div class="meta">
+            <span>Singapore</span>
+            <span>·</span>
+            <a href="mailto:e1124035@u.nus.edu">e1124035@u.nus.edu</a>
+            <span>·</span>
+            <span>(+65) 8266-2731</span>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#research">Research</a>
+        <a class="btn" href="#pubs">Publications</a>
+        <a class="btn" href="#awards">Awards</a>
+        <a class="btn brand" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>I am a <strong>Master by Research candidate</strong> at <strong>Nanyang Technological University (NTU)</strong>, Singapore (Aug 2024 – present). My work sits at the intersection of <em>robust optimization</em>, <em>project management</em>, <em>prescriptive analytics</em>, and <em>causal inference</em>.</p>
+        <p>Previously, I completed an <strong>M.Sc. in Statistics</strong> at the National University of Singapore (2023–2024), and a <strong>B.Econ. in Economic Statistics</strong> at UIBE, Beijing (2019–2023).</p>
+        <div>
+          <span class="pill">Robust Optimization</span>
+          <span class="pill">Project Management</span>
+          <span class="pill">Prescriptive Analytics</span>
+          <span class="pill">Causal Inference</span>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Decision-making under uncertainty</h3>
+            <p>Robust and distributionally-robust approaches for project and operations planning; decision-focused learning; causal graphs with ambiguity.</p>
+          </div>
+          <div class="card">
+            <h3>Applied analytics for operations</h3>
+            <p>Forecasting and classification integrated with prescriptive optimization pipelines, tailored to operational contexts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pubs">
+        <h2>Selected Publications</h2>
+        <ul class="list">
+          <li>
+            <div class="pub-title">Can Overseas Economic and Trade Cooperation Zones Promote Inclusive Growth?</div>
+            <div class="muted">with supervision by Hua Niu. <em>Journal of International Trade</em> (CSSCI).</div>
+          </li>
+          <li>
+            <div class="pub-title">Can Digital Transformation Promote High-quality Employment?</div>
+            <div class="muted">R&R at <em>Statistical Research</em> (CSSCI).</div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="awards">
+        <h2>Awards</h2>
+        <ul class="list">
+          <li><strong>NTU Research Scholarship</strong>, 2024</li>
+          <li>Honorable Mention, <em>ICM</em>, 2023</li>
+          <li><em>Excellent Graduation Thesis of Beijing</em>, 2023</li>
+          <li><em>Xiaomi Special Scholarship</em>, UIBE, 2022</li>
+        </ul>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ul class="list">
+          <li><strong>NTU</strong>, Master by Research Candidate (Aug 2024 – present)</li>
+          <li><strong>NUS</strong>, M.Sc. in Statistics (Statistics for Data Science), 2023–2024</li>
+          <li><strong>UIBE</strong>, B.Econ. in Economic Statistics, 2019–2023</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:e1124035@u.nus.edu">e1124035@u.nus.edu</a></p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="y"></span> Zhenyu (Zane) Li
+    </footer>
+  </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
