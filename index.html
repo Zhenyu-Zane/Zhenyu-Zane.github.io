@@ -65,7 +65,6 @@
       flex-direction: column;
       gap: 12px;
     }
-    
     .award-card {
       display: flex;
       justify-content: space-between;
@@ -73,17 +72,99 @@
       padding: 12px 0;
       border-bottom: 1px dashed var(--line);
     }
-    
     .award-card:last-child {
       border-bottom: none;
     }
-    
     .award-date {
       color: var(--muted);
       font-weight: 500;
       font-size: 14px;
       white-space: nowrap;
     }
+    .award-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease, background .3s ease;
+      will-change: transform, box-shadow;
+    }
+    .award-card {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    .award-card.reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .award-card:hover,
+    .award-card:focus-within {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+      border-color: var(--accent);
+      background: linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+    }
+    .award-date {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: color .2s ease, transform .2s ease, text-shadow .2s ease;
+    }
+    .award-card:hover .award-date,
+    .award-card:focus-within .award-date {
+      color: var(--accent);
+      transform: translateX(2px);
+      text-shadow: 0 0 8px color-mix(in oklab, var(--accent) 35%, transparent);
+    }
+    .award-card::before {
+      content: "";
+      position: absolute;
+      left: -120%;
+      top: 0;
+      width: 120%;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(110deg,
+        transparent 0%,
+        color-mix(in oklab, var(--accent) 20%, transparent) 30%,
+        color-mix(in oklab, var(--accent) 40%, transparent) 50%,
+        transparent 70%);
+      transform: skewX(-12deg);
+      opacity: 0;
+    }
+    .award-card:hover::before,
+    .award-card:focus-within::before {
+      animation: sweep 900ms ease forwards;
+      opacity: 1;
+    }
+    @keyframes sweep {
+      0%   { left: -120%; }
+      100% { left: 120%; }
+    }
+    .award-card::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--brand), var(--accent));
+      opacity: .0;
+      transition: opacity .2s ease;
+    }
+    .award-card:hover::after,
+    .award-card:focus-within::after {
+      opacity: .9;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .award-card,
+      .award-card.reveal,
+      .award-card::before,
+      .award-date {
+        transition: none !important;
+        animation: none !important;
+      }
+      .award-card { opacity: 1; transform: none; }
+    }
+
     .pub-title { font-weight: 600; }
     footer { margin: 48px 0 12px; color: var(--muted); font-size: 14px; text-align: center; }
     /* Education cards */
@@ -93,7 +174,6 @@
       padding: 20px; border-radius: 20px; background: var(--card);
       border: 1px solid var(--line); box-shadow: 0 4px 16px rgba(0,0,0,.08);
     }
-  
     .edu-name { font-weight: 600; font-size: 16px; line-height: 1.4; }
     .edu-degree { color: var(--muted); margin-top: 4px; font-size: 15px;}
     .edu-date {
@@ -242,9 +322,27 @@
     <footer>
       © <span id="y"></span> Zhenyu Li (Zane) 
     </footer>
+    
   </div>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    
+    (function () {
+      const cards = document.querySelectorAll('.award-card');
+      if (!('IntersectionObserver' in window) || !cards.length) {
+        cards.forEach(c => c.classList.add('reveal'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(c => io.observe(c));
+    })();
   </script>
 </body>
 </html>
