@@ -3,6 +3,85 @@
   --content-width: 850px;
 }
 
+/* Match AcademicPages' desktop typography scale: 16px on small screens,
+   18px from tablet/desktop widths upward. */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Typography parity with the reference AcademicPages site. */
+.site-title {
+  font-size: 1rem !important;
+}
+
+.site-nav a {
+  font-size: 1rem !important;
+}
+
+.author-name {
+  font-size: 1rem !important;
+}
+
+.author-bio,
+.author-links a,
+.author-links span {
+  font-size: .75rem !important;
+}
+
+.home-intro {
+  font-size: 1rem !important;
+}
+
+.home-section-label {
+  font-size: .73rem !important;
+}
+
+.research-group-heading {
+  font-size: .76rem !important;
+}
+
+.research-tag {
+  font-size: .83rem !important;
+}
+
+.page-title {
+  font-size: 1.563rem !important;
+}
+
+.section-heading {
+  font-size: 1.25rem !important;
+}
+
+.citation-line {
+  font-size: 1rem !important;
+}
+
+.citation-note {
+  font-size: .88rem !important;
+}
+
+.education-school {
+  font-size: 1rem !important;
+}
+
+.education-degree {
+  font-size: .90rem !important;
+}
+
+.education-date {
+  font-size: .84rem !important;
+}
+
 /* Keep the same academic-page geometry on every desktop page. */
 .masthead-inner {
   width: 100%;
