@@ -1,0 +1,82 @@
+/* Research paper cards adapted from the reference AcademicPages research page. */
+
+.research-papers {
+  color: #4f555a;
+}
+
+.paper-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px 0 32px;
+  padding: 28px 32px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+
+.paper-title {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #444a4f;
+}
+
+.paper-meta {
+  margin: 0 0 6px;
+  font-size: .90em;
+  line-height: 1.5;
+  color: #555c61;
+}
+
+.paper-status {
+  margin: 0;
+  font-size: .88em;
+  line-height: 1.5;
+  color: #62686d;
+}
+
+.paper-card .journal {
+  color: #30363b;
+  font-weight: 650;
+  font-style: italic;
+}
+
+.paper-card .bracket-link {
+  margin-left: 4px;
+  font-size: .92em;
+  white-space: nowrap;
+}
+
+.paper-card:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .research-papers {
+    font-size: .94em;
+  }
+
+  .paper-card {
+    margin: 14px 0 22px;
+    padding: 17px 15px;
+    border-radius: 13px;
+  }
+
+  .paper-title {
+    margin-bottom: 7px;
+    font-size: 1em;
+    line-height: 1.38;
+  }
+
+  .paper-meta {
+    margin-bottom: 5px;
+    font-size: .84em;
+    line-height: 1.45;
+  }
+
+  .paper-status {
+    font-size: .82em;
+    line-height: 1.45;
+  }
+}
