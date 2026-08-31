@@ -19,13 +19,38 @@ body {
   }
 }
 
-/* Typography parity with the reference AcademicPages site. */
+/* Global typography parity across all pages. */
 .site-title {
   font-size: 1rem !important;
 }
 
 .site-nav a {
   font-size: 1rem !important;
+  transition: color .18s ease, transform .18s ease;
+}
+
+/* Quiet AcademicPages-style navigation motion. */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: #52adc8;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .18s ease;
+}
+
+.site-nav a:hover {
+  transform: translateY(-1px);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
 }
 
 .author-name {
@@ -52,6 +77,14 @@ body {
 
 .research-tag {
   font-size: .83rem !important;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease !important;
+}
+
+.research-tag:hover {
+  transform: translateY(-2px) !important;
+  background: #f2f7fa !important;
+  border-color: #c8d9e5 !important;
+  box-shadow: 0 5px 12px rgba(60,78,95,.07) !important;
 }
 
 .page-title {
@@ -62,12 +95,13 @@ body {
   font-size: 1.25rem !important;
 }
 
+/* Keep the principal reading text near the 18px desktop baseline. */
 .citation-line {
   font-size: 1rem !important;
 }
 
 .citation-note {
-  font-size: .88rem !important;
+  font-size: .94rem !important;
 }
 
 .education-school {
@@ -75,11 +109,28 @@ body {
 }
 
 .education-degree {
-  font-size: .90rem !important;
+  font-size: .95rem !important;
 }
 
 .education-date {
   font-size: .84rem !important;
+}
+
+.project-title {
+  font-size: 1.06rem !important;
+}
+
+.project-description {
+  font-size: .98rem !important;
+  line-height: 1.56 !important;
+}
+
+.project-tags span {
+  font-size: .76rem !important;
+}
+
+.simple-name {
+  font-size: .96rem !important;
 }
 
 /* Keep the same academic-page geometry on every desktop page. */
@@ -98,6 +149,7 @@ body {
 .page-content {
   width: 100%;
   max-width: 850px !important;
+  font-size: 1rem;
 }
 
 @media (max-width: 980px) {
@@ -115,11 +167,26 @@ body {
 }
 
 @media (max-width: 700px) {
+  .site-nav a:hover {
+    transform: none;
+  }
+
+  .site-nav a::after {
+    bottom: 11px;
+  }
+
   .page-shell {
     display: block !important;
   }
 
   .page-content {
     max-width: none !important;
+  }
+
+  .project-description,
+  .education-degree,
+  .simple-name,
+  .citation-note {
+    font-size: .90rem !important;
   }
 }
