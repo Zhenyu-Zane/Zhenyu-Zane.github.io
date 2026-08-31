@@ -63,6 +63,24 @@ body {
   font-size: .75rem !important;
 }
 
+/* Keep sidebar text quiet, but restore recognizable icon colors. */
+.author-links li:nth-child(1) i {
+  color: #d9534f !important;
+}
+
+.author-links li:nth-child(2) i {
+  color: #4a90e2 !important;
+}
+
+.author-links li:nth-child(3) i {
+  color: #24292f !important;
+}
+
+.hf-mini {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
 .home-intro {
   font-size: 1rem !important;
 }
