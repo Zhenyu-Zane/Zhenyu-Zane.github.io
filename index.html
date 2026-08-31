@@ -1,426 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="msvalidate.01" content="D886E5927EC1899A90FBFDD13BA04B0D" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msvalidate.01" content="D886E5927EC1899A90FBFDD13BA04B0D">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Zhenyu Li",
-    "alternateName": "李震宇",
+    "alternateName": ["Zane Li", "李震宇"],
     "givenName": "Zhenyu",
     "familyName": "Li",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Nanyang Technological University (NTU)"
-    },
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "Nanyang Technological University (NTU)"},
     "alumniOf": [
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "University of International Business and Economics (UIBE)"
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "National University of Singapore (NUS)"
-      }
+      {"@type": "CollegeOrUniversity", "name": "National University of Singapore (NUS)"},
+      {"@type": "CollegeOrUniversity", "name": "University of International Business and Economics (UIBE)"}
     ],
-    "jobTitle": "M.Res. Candidate in Operations Management",
+    "jobTitle": "PhD Candidate in Operations Management",
     "url": "https://zhenyu-zane.github.io/",
     "email": "mailto:zhenyu009@e.ntu.edu.sg",
-    "sameAs": [
-      "https://github.com/Zhenyu-Zane",
-      "https://huggingface.co/Zhenyu-Zane"
-    ]
+    "sameAs": ["https://github.com/Zhenyu-Zane", "https://huggingface.co/Zhenyu-Zane"]
   }
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zhenyu (Zane) Li – Academic Homepage</title>
-  <meta name="description" content="Academic homepage of Zhenyu (Zane) Li – research in robust optimization, project management, prescriptive analytics, and causal inference." />
+  <meta name="description" content="Academic homepage of Zhenyu (Zane) Li, PhD Candidate in Operations Management at Nanyang Technological University.">
+  <link rel="canonical" href="https://zhenyu-zane.github.io/">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <style>
-    :root {
-      --bg: #f9fafb;
-      --fg: #1f2937;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --brand: #2563eb;
-      --accent: #3b82f6;
-      --line: #e5e7eb;
-      /* light blue system */
-      --sky-1: #eaf3ff;
-      --sky-2: #d6e7ff;
-      --sky-3: #b9d5ff;
-      --sky-ink: #0b63ff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { 
-        --bg:#0b0d10; --fg:#e8eaed; --muted:#a0a6ad; --card:#12161b; 
-        --brand:#4f8cff; --accent:#7cc7ff; --line:#1f2630;
-        --sky-1:#0b1624; --sky-2:#0f2238; --sky-3:#17365b; --sky-ink:#78b6ff;
-      }
-    }
-
-    /* ====== Base ====== */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
-      overflow-x: hidden;
-    }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; position: relative; }
-
-    /* ====== Background Interactive Layer ====== */
-    .decor {
-      position: fixed; inset: 0; pointer-events: none; z-index: -1;
-      background:
-        radial-gradient(600px 400px at 15% 12%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 60%),
-        radial-gradient(500px 420px at 90% 18%, color-mix(in srgb, var(--brand) 16%, transparent) 0%, transparent 60%),
-        radial-gradient(700px 600px at 20% 85%, color-mix(in srgb, var(--accent) 12%, transparent) 0%, transparent 65%),
-        radial-gradient(640px 520px at 85% 80%, color-mix(in srgb, var(--brand) 10%, transparent) 0%, transparent 65%);
-      filter: saturate(1.2) blur(0.2px);
-    }
-
-    /* Blueprint dotted grid fading to center */
-    .blueprint {
-      position: fixed; inset: 0; pointer-events: none; z-index: -1;
-      --s: 36px;
-      background:
-        radial-gradient(circle at center, transparent 25%, var(--bg) 26%),
-        radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 2px, transparent 2px);
-      background-size: 100% 100%, var(--s) var(--s);
-      opacity: .22;
-      mask: radial-gradient(closest-side, #000 30%, transparent 100%);
-    }
-
-    /* Cursor-follow highlight ring */
-    .cursor-ring {
-      position: fixed; width: 24px; height: 24px; border-radius: 50%;
-      pointer-events: none; mix-blend-mode: multiply; z-index: 2; 
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent) 0%, transparent 70%);
-      box-shadow: 0 0 40px 12px color-mix(in srgb, var(--accent) 45%, transparent);
-      opacity: 0; transition: opacity .25s ease;
-    }
-
-    header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
-    .id { display: flex; gap: 20px; align-items: center; }
-    .avatar { width: 180px; height: 260px; border-radius: 20px; overflow: hidden; background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,.15); border: 2px solid var(--line); }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .social-icons { margin-top: 8px; }
-    .social-icons a { display: inline-block; width: 36px; height: 36px; line-height: 36px; margin-right: 8px; border-radius: 50%; background-color: #f1f1f1; text-align: center; transition: background-color 0.3s, transform 0.3s; }
-    .social-icons a:hover { background-color: #e0e0e0; transform: scale(1.1); }
-    .social-icons i, .social-icons img { vertical-align: middle; width: 20px; height: 20px; }
-    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0; }
-    .title { color: var(--muted); margin-top: 6px; }
-    .meta { margin-top: 10px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
-    nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-    .btn { padding: 10px 18px; border-radius: 18px; background: var(--card); color: var(--fg); text-decoration: none; border: 1px solid var(--line); transition: transform .12s ease, background .2s ease, box-shadow .2s ease; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.1); border-color: var(--accent); }
-    .brand { background: linear-gradient(135deg, var(--brand), var(--accent)); color: white; border: none; }
-
-    section { margin-top: 42px; padding: 28px; border-radius: 20px; background: var(--card); box-shadow: 0 4px 16px rgba(0,0,0,.08); border: 1px solid var(--line); }
-    /* Parallax-friendly: smooth transform */
-    main section { will-change: transform; transition: transform .08s linear; }
-
-    h2 { font-size: 22px; margin: 0 0 18px; position: relative; }
-    h2::after { content:""; position: absolute; left: 0; bottom: -8px; width: 72px; height: 4px; border-radius: 999px; background: linear-gradient(90deg, var(--sky-2), transparent); opacity: .7; }
-
-    p { margin: 8px 0 12px; }
-    .cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .card { background: var(--card); border-radius: 20px; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,.08); border: 1px solid var(--line);  transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease;}
-    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.12); border-color: var(--accent); }
-    .card:active { transform: translateY(-1px) scale(.995); }
-    .pill { display:inline-block; padding:8px 14px; border-radius:999px; background: var(--bg); border:1px solid var(--line); margin: 6px 6px 0 0; font-size: 14px; color: var(--fg); box-shadow: inset 0 2px 6px rgba(0,0,0,.06); transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease; }
-    .pill:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.10); border-color: var(--accent); }
-    .list { list-style: none; padding: 0; margin: 0; }
-    .list li { padding: 12px 0; border-bottom: 1px dashed var(--line); }
-    .list li:last-child { border-bottom: 0; }
-    .list li:hover { transform: translateX(4px); background: color-mix(in srgb, var(--accent) 8%, transparent); box-shadow: 0 4px 12px rgba(0,0,0,.05); }
-
-    .award-list { display: flex; flex-direction: column; gap: 12px; }
-    .award-card { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--line); position: relative; overflow: hidden; transition: transform .16s ease, box-shadow .2s ease, border-color .2s ease, background .3s ease; will-change: transform, box-shadow; opacity: 0; transform: translateY(8px); }
-    .award-card.reveal { opacity: 1; transform: translateY(0); transition: opacity .35s ease, transform .35s ease; }
-    .award-card:hover, .award-card:focus-within { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.12); border-color: var(--accent); background: linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02)); }
-    .award-date { color: var(--muted); font-weight: 600; font-size: 14px; white-space: nowrap; transition: color .2s ease, transform .2s ease, text-shadow .2s ease; }
-    .award-card:hover .award-date, .award-card:focus-within .award-date { color: var(--accent); transform: translateX(2px); text-shadow: 0 0 8px color-mix(in oklab, var(--accent) 35%, transparent); }
-    .award-card::before { content: ""; position: absolute; left: -120%; top: 0; width: 120%; height: 100%; pointer-events: none; background: linear-gradient(110deg, transparent 0%, color-mix(in oklab, var(--accent) 15%, transparent) 30%, color-mix(in oklab, var(--accent) 25%, transparent) 50%, transparent 70%); transform: skewX(-12deg); opacity: 0; }
-    .award-card:hover::before, .award-card:focus-within::before { animation: sweep 1.6s ease forwards; opacity: 1; }
-    @keyframes sweep { 0% { left: -120%; } 100% { left: 120%; } }
-    .award-card::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--brand), var(--accent)); opacity: .0; transition: opacity .2s ease; }
-    .award-card:hover::after, .award-card:focus-within::after { opacity: .9; }
-
-    .pub-title { font-weight: 600; }
-    footer { margin: 48px 0 12px; color: var(--muted); font-size: 14px; text-align: center; }
-
-    .edu-list { display: flex; flex-direction: column; gap: 18px; }
-    .edu-card { display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; border-radius: 20px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
-    .edu-name { font-weight: 600; font-size: 16px; line-height: 1.4; }
-    .edu-degree { color: var(--muted); margin-top: 4px; font-size: 15px;}
-    .edu-date { color: var(--muted); white-space: nowrap; font-weight: 500; font-size: 14px; margin-left: 18px; padding-top: 2px; }
-    .edu-card:hover { transform: translateY(-2px); transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease; box-shadow: 0 8px 24px rgba(0,0,0,.10); border-color: var(--accent); }
-    @media (max-width: 640px) { .edu-card { flex-direction: column; gap: 8px; } .edu-date { align-self: flex-start; margin-left: 0; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      main section { transition: none !important; transform: none !important; }
-      .award-card, .award-card.reveal, .award-card::before, .award-date { transition: none !important; animation: none !important; }
-      .award-card { opacity: 1; transform: none; }
-    }
-
-    /* === Mobile compatibility tweaks === */
-    img, video {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    @media (max-width: 480px) {
-      h1 { font-size: 22px; }
-      h2 { font-size: 18px; }
-      .btn { padding: 8px 14px; font-size: 14px; }
-      .cards {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .wrap {
-        padding: 20px 12px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- BG layers -->
-  <div class="decor" aria-hidden="true"></div>
-  <div class="blueprint" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/">Zhenyu (Zane) Li</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/research/">Research</a>
+        <a href="/background/">Background</a>
+        <a href="/others/">Others</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="wrap">
-    <header>
-      <div class="id">
-        <div class="avatar">
-          <img src="证件照白底2寸.jpg" alt="Portrait of Zhenyu (Zane) Li" onerror="this.style.display='none'" />
-        </div>
-        <div>
-          <h1>Zhenyu Li (Zane)</h1>
-          <div class="title">PhD Candidate, Nanyang Technological University (NTU), Singapore. Aug 2024 – Present</div>
-          <div class="meta">
-            <span>Email:</span>
-            <a href="mailto:zhenyu009@e.ntu.edu.sg">zhenyu009@e.ntu.edu.sg</a>
-            <br/>
-            <div class="social-icons">
-              <a href="https://github.com/Zhenyu-Zane" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://huggingface.co/Zhenyu-Zane" target="_blank" title="Hugging Face">
-                <img src="huggingface.png" alt="Hugging Face logo">
-              </a>
-            </div>
-          </div>
-        </div>
+  <div class="page-shell">
+    <aside class="author-profile" aria-label="Author profile">
+      <div class="author-avatar"><img src="/证件照白底2寸.jpg" alt="Portrait of Zhenyu (Zane) Li"></div>
+      <div>
+        <h2 class="author-name">Zhenyu (Zane) Li</h2>
+        <p class="author-bio">李震宇</p>
+        <p class="author-role">PhD Candidate in Operations Management<br>Nanyang Business School, NTU</p>
       </div>
-    </header>
+      <ul class="author-links">
+        <li><span><i class="fa-solid fa-location-dot"></i> Singapore</span></li>
+        <li><a href="mailto:zhenyu009@e.ntu.edu.sg"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        <li><a href="https://github.com/Zhenyu-Zane" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a></li>
+        <li><a href="https://huggingface.co/Zhenyu-Zane" target="_blank" rel="noopener"><img class="hf-mini" src="/huggingface.png" alt=""> Hugging Face</a></li>
+      </ul>
+    </aside>
 
-    <main>
-      <section id="about">
-        <h2>About me</h2>
-        <p> I am a <strong>PhD Candidate</strong> in <strong>Operations Management</strong> at <strong>Nanyang Business School (NBS)</strong>.</p>
-        <p> I build decision-focused models that link data, uncertainty, and actions. My current work and interests encompass robust optimization for project scheduling, prescriptive analytics for operations, and decision-making under causal structure uncertainty.</p>
-        <p> I am fortunate to be advised by Prof. <a href="https://sites.google.com/view/qinshen-tang/" target="_blank">Qinshen Tang</a>. </p>
-        <div>
-          <span class="pill">Robust Optimization</span>
-          <span class="pill">Project Management</span>
-          <span class="pill">Prescriptive Analytics</span>
-          <span class="pill">Causal Inference</span>
-        </div>
-      </section>
+    <main class="page-content">
+      <div class="home-intro">
+        <p>I am Zhenyu (Zane) Li, a <strong>PhD Candidate in Operations Management</strong> at Nanyang Business School, Nanyang Technological University. I am fortunate to be advised by Prof. <a href="https://sites.google.com/view/qinshen-tang/" target="_blank" rel="noopener">Qinshen Tang</a>.</p>
+        <p>My research develops decision-focused models that connect data, uncertainty, and action. I am particularly interested in robust optimization for project planning, prescriptive analytics for operations, and decision-making when causal structure is uncertain.</p>
+      </div>
 
-      <section id="education">
-        <h2>Education</h2>
-        <div class="edu-list">
-          <div class="edu-card">
-            <div class="edu-main">
-              <div class="edu-name">Nanyang Technological University (NTU), Singapore</div>
-              <div class="edu-degree">PhD Candidate in Business, Nanyang Business School</div>
-            </div>
-            <div class="edu-date">Aug 2024 – Present</div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-main">
-              <div class="edu-name">National University of Singapore (NUS), Singapore</div>
-              <div class="edu-degree">M.Sc. in Statistics (Statistics for Data Science), School of Science</div>
-            </div>
-            <div class="edu-date">Aug 2023 – Jun 2024</div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-main">
-              <div class="edu-name">University of International Business and Economics (UIBE), Beijing, China</div>
-              <div class="edu-degree">B.Econ. in Economic Statistics, School of Statistics<br>Minor in Financial Engineering, China School of Banking and Finance</div>
-            </div>
-            <div class="edu-date">Sep 2019 – Jun 2023</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="working paper">
-        <h2>Working papers</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Project Selection, Planning and Execution: a Review · 2025</h3>
-            <p>AI is reshaping project management: what has already happened, and what might happen next?</p>
-            <p><em>Major Revision at European Journal of Operational Research</em></p>
-          </div>
-          <div class="card">
-            <h3>Human Capital Commitment and Corporate Bond Issuance Pricing · 2024</h3>
-            <p>Commitments are a double-edged sword—do they add burdens, or cut uncertainty thus lower funding costs?</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="pubs">
-        <h2>Publications</h2>
-        <ul class="list">
-          <li>
-            <div class="pub-title">The Impact of Enterprise Digital on Employment Quality: Measurement Methods for Digital Transformation</div>
-            <div class="pub-meta">2025 · Published in <em>Statistical Research</em></div>
-            <div class="pub-meta"><a href="https://oversea-cnki-net.ap2.proxy.openathens.net/kcms2/article/abstract?v=H26UkN0bSyQBWpJsvya5ep3vxi2v3Ud8Uwj2NCGeYen1ZQkGNxVtluMogXm9fcFPLq8Bw8QRAp87-MjXpGz22qfcglb0gTHnygPq-0J6rsa3ZkFLzpoph88M1MnavGJaPImrGBP1M4CtGvZPhDRTZ3PaO0xP8xqCSgznHLsDPTQ=&uniplatform=OVERSEA" target="_blank">Download Paper</a></div>
-          </li>
-          <li>
-            <div class="pub-title">Can overseas economic and trade cooperation zones promote inclusive growth in host countries?</a></div>
-            <div class="pub-meta">2024 · Published in <em>Journal of International Trade</em></div>
-            <div class="pub-meta"><a href="https://d.wanfangdata.com.cn/periodical/gjmywt202402003" target="_blank">Download Paper</a></div>
-          </li>
-        </ul>
-      </section>
-
-      <section id="projects-uncertainty">
-        <h2>Github Projects</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>
-              <a href="https://github.com/Zhenyu-Zane/Bert-base-Chinese-Uncertainty" target="_blank" rel="noopener">Bert-base-Chinese-Uncertainty</a>
-            </h3>
-            <p>Finetuned <strong>BERT Base Chinese</strong> model for <strong>uncertain sentence classification</strong> (quantifying uncertainty in general-domain text in Chinese).</p>
-            <div class="meta" style="margin-top:10px">
-              <span class="pill">NLP Bert</span>
-              <span class="pill">Chinese</span>
-              <span class="pill">Uncertainty</span>
+      <section class="home-section" aria-labelledby="research-interests">
+        <div class="home-section-heading"><div class="home-section-label" id="research-interests">Research</div></div>
+        <div class="research-layout">
+          <div class="research-group">
+            <div class="research-group-heading">Topics</div>
+            <div class="research-tags">
+              <span class="research-tag">Project Management</span>
+              <span class="research-tag">Prescriptive Analytics</span>
             </div>
           </div>
-          <div class="card">
-            <h3>
-              <a href="https://github.com/Zhenyu-Zane/Finbert-Uncertainty" target="_blank" rel="noopener">Finbert-Uncertainty</a>
-            </h3>
-            <p>Finetuned <strong>FinBERT</strong> model for <strong>uncertain sentence classification</strong> (quantifying uncertainty in financial text in English).</p>
-            <div class="meta" style="margin-top:10px">
-              <span class="pill">NLP Bert</span>
-              <span class="pill">Finance</span>
-              <span class="pill">Uncertainty</span>
+          <div class="research-group">
+            <div class="research-group-heading">Methodologies</div>
+            <div class="research-tags">
+              <span class="research-tag">Robust Optimization</span>
+              <span class="research-tag">Causal Inference</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="awards">
-        <h2>Awards and Scholarships</h2>
-        <div class="award-list">
-          <div class="award-card"><div class="award-name"><em>NTU Research Scholarship</em></div><div class="award-date">2024</div></div>
-          <div class="award-card"><div class="award-name"><em>Excellent Graduation Thesis of Beijing</em></div><div class="award-date">2023</div></div>
-          <div class="award-card"><div class="award-name"><em>Xiaomi Special Scholarship</em></div><div class="award-date">2022</div></div>
-          <div class="award-card"><div class="award-name"><em>First-Class Scholarship, UIBE</em></div><div class="award-date">2022</div></div>
+      <section class="home-section" aria-labelledby="selected-research">
+        <div class="home-section-heading"><div class="home-section-label" id="selected-research">Selected Research</div></div>
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="feature-year">2025</div>
+            <div>
+              <div class="feature-title">Project Selection, Planning and Execution: A Review</div>
+              <div class="feature-meta">Major Revision at <em>European Journal of Operational Research</em></div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-year">2024</div>
+            <div>
+              <div class="feature-title">Human Capital Commitment and Corporate Bond Issuance Pricing</div>
+              <div class="feature-meta">Working paper</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="awards">
-        <h2>Grants</h2>
-        <div class="award-list">
-          <div class="award-card"><div class="award-name"><em>Singapore Ministry of Education Academic Research Funding (MOE-AcRF) Tier 1 Grant</em></div><div class="award-date">2025</div></div>
+      <section class="home-section" aria-labelledby="education">
+        <div class="home-section-heading"><div class="home-section-label" id="education">Education</div></div>
+        <div class="education-list">
+          <div class="education-row">
+            <div><div class="education-school">Nanyang Technological University (NTU), Singapore</div><div class="education-degree">PhD Candidate in Business, Nanyang Business School</div></div>
+            <div class="education-date">Aug 2024 – Present</div>
+          </div>
+          <div class="education-row">
+            <div><div class="education-school">National University of Singapore (NUS), Singapore</div><div class="education-degree">M.Sc. in Statistics (Statistics for Data Science), School of Science</div></div>
+            <div class="education-date">Aug 2023 – Jun 2024</div>
+          </div>
+          <div class="education-row">
+            <div><div class="education-school">University of International Business and Economics (UIBE), Beijing, China</div><div class="education-degree">B.Econ. in Economic Statistics, School of Statistics<br>Minor in Financial Engineering, China School of Banking and Finance</div></div>
+            <div class="education-date">Sep 2019 – Jun 2023</div>
+          </div>
         </div>
       </section>
+
+      <div class="home-updated">Last updated: Aug 2026</div>
     </main>
-
-    <footer>© <span id="y"></span> Zhenyu Li (Zane)</footer>
   </div>
 
-  <script>
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Reveal awards lazy
-    (function () {
-      const cards = document.querySelectorAll('.award-card');
-      if (!('IntersectionObserver' in window) || !cards.length) {
-        cards.forEach(c => c.classList.add('reveal'));
-        return;
-      }
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      cards.forEach(c => io.observe(c));
-    })();
-
-    // ===== Cursor ring that gently follows the mouse =====
-    (function() {
-      const ring = document.getElementById('cursorRing');
-      let x = innerWidth / 2, y = innerHeight / 2;
-      let tx = x, ty = y; // target
-
-      function tick() {
-        x += (tx - x) * 0.12;
-        y += (ty - y) * 0.12;
-        ring.style.transform = `translate3d(${x - 12}px, ${y - 12}px, 0)`; // center ring (24px)
-        requestAnimationFrame(tick);
-      }
-      tick();
-
-      window.addEventListener('mousemove', e => {
-        tx = e.clientX; ty = e.clientY; ring.style.opacity = 0.6;
-      });
-      window.addEventListener('mouseleave', () => ring.style.opacity = 0);
-    })();
-
-    // ===== Section parallax (gentle, mouse-based) =====
-    (function() {
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-      const sections = Array.from(document.querySelectorAll('main section'));
-      if (!sections.length) return;
-      const MAX_SHIFT = 8; // px, overall intensity
-
-      // precompute relative depth for each section
-      const depth = sections.map((_, i) => 0.6 + i * 0.12); // slightly increasing
-
-      const apply = (mx, my) => {
-        sections.forEach((sec, i) => {
-          const d = depth[i];
-          const tx = mx * d * MAX_SHIFT;
-          const ty = my * d * MAX_SHIFT;
-          sec.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
-        });
-      };
-
-      let rafId = null, targetX = 0, targetY = 0, curX = 0, curY = 0;
-      const animate = () => {
-        curX += (targetX - curX) * 0.12;
-        curY += (targetY - curY) * 0.12;
-        apply(curX, curY);
-        rafId = requestAnimationFrame(animate);
-      };
-      animate();
-
-      window.addEventListener('mousemove', (e) => {
-        // normalize to -1..1
-        targetX = (e.clientX / innerWidth - 0.5) * 2;
-        targetY = (e.clientY / innerHeight - 0.5) * 2;
-      });
-      window.addEventListener('mouseleave', () => {
-        targetX = 0; targetY = 0; // ease back to center
-      });
-    })();
-  </script>
+  <footer class="site-footer"><div class="site-footer-inner">© 2026 Zhenyu Li. Design adapted from <a href="https://academicpages.github.io/" target="_blank" rel="noopener">AcademicPages</a> / <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a>.</div></footer>
 </body>
 </html>
