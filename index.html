@@ -26,17 +26,17 @@
   <title>Zhenyu Li – Academic Homepage</title>
   <meta name="description" content="Academic homepage of Zhenyu Li, PhD Candidate in Operations Management at Nanyang Technological University.">
   <link rel="canonical" href="https://zhenyu-zane.github.io/">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/refinement.css">
-  <link rel="stylesheet" href="/assets/css/layout-wide.css?v=20260831-5">
-  <link rel="stylesheet" href="/assets/css/responsive.css?v=20260831-2">
+  <link rel="stylesheet" href="/assets/css/editorial.css?v=20261018">
+  <meta name="theme-color" content="#f7f6f2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="masthead">
     <div class="masthead-inner">
-      <a class="site-title" href="/">Zhenyu Li</a>
+      <a class="site-title" href="/" aria-label="Zhenyu Li, home">Zhenyu Li<span class="site-title-dot" aria-hidden="true">.</span></a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/" class="active" aria-current="page">Home</a>
         <a href="/research/">Research</a>
         <a href="/background/">Background</a>
         <a href="/others/">Others</a>
@@ -46,10 +46,11 @@
 
   <div class="page-shell">
     <aside class="author-profile" aria-label="Author profile">
-      <div class="author-avatar"><img src="/profile.jpg" alt="Portrait of Zhenyu Li"></div>
+      <div class="author-avatar"><img width="174" height="174" src="/profile.jpg" alt="Portrait of Zhenyu Li"></div>
       <div>
         <h2 class="author-name">Zhenyu Li</h2>
-        <p class="author-bio">李震宇</p>
+        <p class="author-bio" lang="zh">李震宇</p>
+        <p class="author-role">PhD Candidate<br>Operations Management<br><span>Nanyang Technological University</span></p>
       </div>
       <ul class="author-links">
         <li><span><i class="fa-solid fa-location-dot"></i> Singapore</span></li>
@@ -59,7 +60,11 @@
       </ul>
     </aside>
 
-    <main class="page-content">
+    <main id="main-content" class="page-content">
+      <header class="home-heading">
+        <p class="eyebrow">Operations Management · NTU</p>
+        <h1>Data, uncertainty,<br>and <em>decisions.</em></h1>
+      </header>
       <div class="home-intro">
         <p>
           I am Zhenyu Li, a PhD candidate in Operations Management at
@@ -75,12 +80,12 @@
           This motivates my interest in <strong>prescriptive analytics</strong>, with my current research centered on <strong>robust optimization and project management</strong>.
         </p>
 
-        <p>📧 Email: <a href="mailto:zhenyu009@e.ntu.edu.sg">zhenyu009@e.ntu.edu.sg</a></p>
+        <div class="intro-actions"><a class="text-link" href="/research/">Explore my research <span aria-hidden="true">↗</span></a><a class="text-link secondary-link" href="mailto:zhenyu009@e.ntu.edu.sg">Get in touch <span aria-hidden="true">↗</span></a></div>
       </div>
 
       <section class="home-section" aria-labelledby="research-interests">
         <div class="home-section-heading">
-          <div class="home-section-label" id="research-interests">Research</div>
+          <h2 class="home-section-label" id="research-interests">Research interests</h2>
         </div>
 
         <div class="research-layout">
@@ -103,12 +108,18 @@
         </div>
       </section>
 
-      <div class="home-updated">Last updated: Aug 2026</div>
+      <section class="featured-publication" aria-labelledby="featured-paper">
+        <div class="feature-topline"><p class="eyebrow">Selected publication</p><span class="status-label">Accepted · EJOR</span></div>
+        <h2 id="featured-paper">Project Selection, Planning, and Execution: A Review</h2>
+        <p>2026 · With Nicholas G. Hall and Qinshen Tang</p>
+        <a class="text-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5941834" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+      </section>
+      <div class="home-updated">Last updated: October 2026</div>
     </main>
   </div>
 
   <footer class="site-footer">
-    <div class="site-footer-inner">© 2026 Zhenyu Li. Design adapted from <a href="https://academicpages.github.io/" target="_blank" rel="noopener">AcademicPages</a> / <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a>.</div>
+    <div class="site-footer-inner"><span>© 2026 Zhenyu Li</span><span class="footer-credit">Originally adapted from <a href="https://academicpages.github.io/" target="_blank" rel="noopener">AcademicPages</a> / <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a>.</span></div>
   </footer>
 </body>
 </html>
